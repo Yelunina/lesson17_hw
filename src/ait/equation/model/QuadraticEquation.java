@@ -44,16 +44,24 @@ public class QuadraticEquation {
     public void setC(double c) {
         this.c = c;
     }
-    public double delta(){
+
+    public double delta() {
         return b * b - 4 * a * c;
     }
-    public int quantityRoots(){
+
+    public int quantityRoots() {
         double delta = delta();
-        return delta < 0 ? 0 : delta > 0 ? 2 : 1;
+        if (delta == 0) {
+            return 1;
+        } else if (delta > 0) {
+            return 2;
+        } else {
+            return 0;
+        }
     }
 
     public void display() {
-        System.out.println(a + "x^2 " + (b >= 0 ? "+" : "") + b + "x " + (c >= 0 ? "+" : "") + c + " = 0");
+        System.out.println(a + "x^2 " + "+ " + b + "x " + "+ " + c + " = 0");
 
     }
 
